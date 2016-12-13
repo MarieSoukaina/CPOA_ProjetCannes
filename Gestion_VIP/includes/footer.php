@@ -4,7 +4,7 @@
 		<nav id="inside-footer">
 
 			<div id="f1">
-				<strong>Projet Tuteuré</strong>
+				<strong>Projet CPOA</strong>
 				<ul>
 					<li>Qui sommes-nous ?</li>
 					<li>Nous contacter</li><br>
@@ -15,22 +15,19 @@
 			<div id="f2">
 				<strong>Webmasters</strong>
 				<ul>
-					<li>BLANC-PATTIN Laurent</li>
-					<li>CASTELLON Adrien</li>
-					<li>CHABAL Bastien</li>
-					<li>SPONTAK Antonin</li>
+					<li>DEIANA Mikael</li>
 					<li>DUCROZET Pierre</li>
-					<li>MULCIBA Sarah</li>
+					<li>SPONTAK Antonin</li>
 				</ul>
 			</div>
 
 			<div id="f3">
 				<strong>Liens utiles</strong>
 				<ul>
-					<li>Faire une demande de cours</li>
-					<li>Faire une demande de tutorat</li>
-					<li>Calculer sa moyenne</li>
-					<li>Accéder a son emploi du temps</li>
+					<li>Test</li>
+					<li>Test</li>
+					<li>Test</li>
+					<li>Test</li>
 				</ul>
 			</div>
 
