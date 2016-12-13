@@ -1,24 +1,24 @@
 <?php
-	abstract class Modele{
+	abstract class Model{
 
-		// Objet PDO d'accès à la BDD
+		// Objet PDO d'accès à la BD
 		private static $bdd;
 
 		// Exécute une requête SQL éventuellement paramétrée
-		protected function execution($sql, $params = null) {
+		protected function executerRequete($sql, $params = null) {
 			if ($params == null) {
-				$resultat = self::connexionBD()->query($sql);// Exécution directe
+				$resultat = self::getBdd()->query($sql);// exécution directe
 			}
 			else {
-				$resultat = self::connexionBD()->prepare($sql);// Requête préparée
+				$resultat = self::getBdd()->prepare($sql);// requête préparée
 				$resultat->execute($params);
 			}
 			return $resultat;
 		}
 
-		private static function connexionBD() {
+		private static function getBdd() {
 			if(self::$bdd == null){
-				require_once('identifiants.php');
+				require './bin/liaison.php';
 
 				try{
 					self::$bdd = new PDO('mysql:host='.$host .';dbname='.$nombase ,$user,$password);
