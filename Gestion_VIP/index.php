@@ -1,7 +1,8 @@
 <?php
 session_name ('p1501615'); //nommer la session
 session_start (); //start la session actuelle
-require_once("Model/UsersManager.php");
+require_once("model/StaffManager.php");
+require_once("model/VIPManager.php");
 $sm = new StaffManager();
 $vm = new VIPManager();
 
@@ -81,8 +82,6 @@ if(isset($_SESSION ['Login'])){ //si un utilisateur est connecté
 		}
 
 	}
-
-}
 
 else //si personne n'est connecté, on afficher la page de connexion
 {
