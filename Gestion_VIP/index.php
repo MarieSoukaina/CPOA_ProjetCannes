@@ -69,6 +69,7 @@ if(isset($_SESSION ['Login'])){ //si un utilisateur est connecté
 				$dateNaissanceBonFormat = ''.$annee.'-'.$mois.'-'.$jour.'';
 
 				$vm->ajouterVIP($_POST['nomVIP'], $_POST['prenomVIP'], $dateNaissanceBonFormat, $_POST['typeVIP'], $_POST['infoVIP']);
+				echo 'Ajout effectué !'; //TODO : mieux gerer la redirection après ajout
 			}
 			else{
 				require_once("Views/ficheVIP/ajoutVIP.php");

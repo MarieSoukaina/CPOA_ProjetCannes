@@ -10,9 +10,9 @@
 				INTERFACE DE GESTION DES VIP
 				<div>
 					<a href ="index.php?page=ajoutvip">Ajouter VIP</a>
-					<a href ="index.php?page=tutorats">Supprimer</a>
-					<a href ="index.php?page=tutorats">Modifier</a>
-          <a href ="index.php?page=tutorats">Consulter une fiche</a>
+					<a href ="index.php?page=supprimervip">Supprimer</a>
+					<a href ="index.php?page=modifiervip">Modifier</a>
+          <a href ="index.php?page=consultervip">Consulter une fiche</a>
 				</div>
 
 			</div>
