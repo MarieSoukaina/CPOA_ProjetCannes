@@ -1,5 +1,5 @@
 <?php
-session_name ('user'); //nommer la session
+session_name ('p1501615'); //nommer la session
 session_start (); //start la session actuelle
 require_once("Model/UsersManager.php");
 $um1 = new UsersManager();
