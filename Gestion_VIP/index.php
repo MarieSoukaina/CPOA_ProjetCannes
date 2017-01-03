@@ -2,13 +2,14 @@
 session_name ('p1501615'); //nommer la session
 session_start (); //start la session actuelle
 require_once("Model/UsersManager.php");
-$um1 = new UsersManager();
+$sm = new StaffManager();
+$vm = new VIPManager();
 
 if( isset($_POST['identifiant']) && isset($_POST['motDePasse']) ) //on test que les login soit entrés
 {
 
 
-	$testConnexion = $um1->getUsers($_POST['identifiant'],$_POST['motDePasse']);
+	$testConnexion = $sm->getUsers($_POST['identifiant'],$_POST['motDePasse']);
 	if ($testConnexion == false) //si mauvais logins
 	{
 		require('Views/connexion.php');
@@ -46,10 +47,33 @@ if(isset($_SESSION ['Login'])){ //si un utilisateur est connecté
 
 	if(isset($_GET["page"])){
 
-	/*----------------------------------------ACCUEIL----------------------------------------*/
+/*----------------------------------------ACCUEIL----------------------------------------*/
 		if($_GET["page"] == "accueil"){
 				require_once("Views/accueil.php");
 		}
+
+/*----------------------------------------AJOUT D'UN VIP----------------------------------------*/
+		elseif ($_GET["page"] == "ajoutvip")
+			if(isset($_POST['nomVIP']) && isset($_POST['prenomVIP']) && isset($_POST['dateNaissance']) && isset($_POST['typeVIP']) && isset($_POST['infoVIP'])){
+				$vm->ajouterVIP($_POST['nomVIP'], $_POST['prenomVIP'], $_POST['dateNaissance'], $_POST['typeVIP'], $_POST['infoVIP']);
+			}
+			else{
+				require_once("Views/ficheVIP/ajoutVIP.php");
+			}
+
+		}
+
+/*----------------------------------------SUPPRESSION D'UN VIP----------------------------------------*/
+		elseif ($_GET["page"] == "modificationVIP") {
+			require_once("Views/ficheVIP/modificationVIP.php");
+		}
+
+/*----------------------------------------SUPPRESSION D'UN VIP----------------------------------------*/
+		elseif ($_GET["page"] == "suppressionVIP") {
+			require_once("Views/ficheVIP/suppressionVIP.php");
+		}
+
+/*----------------------------------------ERREUR = PAGE INEXISTANTE----------------------------------------*/
 		else{
 			$erreur = 404;
 			$messageErreur = "La page demandée n'existe pas ou a été supprimée";
