@@ -53,9 +53,9 @@ if(isset($_SESSION ['Login'])){ //si un utilisateur est connecté
 			require_once("Views/accueil.php");
 		}
 
-		elseif ($_GET["page"] == "accueilVIP")
+		elseif ($_GET["page"] == "accueilvip")
 		{
-			require_once("Views/ficheVIP/accueilVIP.php");
+			require_once("Views/ficheVIP/accueilvip.php");
 		}
 
 /*----------------------------------------AJOUT D'UN VIP----------------------------------------*/
