@@ -9,9 +9,9 @@
 
 <nav id="sousheader" class="fixed">
 			<a title="Accueil" href="index.php?page=accueil"><img class='home'  alt="Accueil" src="./media/images/home.png"/></a>
-			<a class="bsh1" href="index.php?page=cours">Cours</a>
-			<a class="bsh2" href="index.php?page=forum">Forum</a>
-			<a class="bsh3" href="index.php?page=tutorats">Tutorats</a>
+			<a class="bsh1" href="index.php?page=accueilVIP">Fiches VIP</a>
+			<a class="bsh2" href="index.php?page=forum">Demandes</a>
+			<a class="bsh3" href="index.php?page=tutorats">Archivage Echanges</a>
 
 
 			<form id="search">

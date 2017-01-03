@@ -1,5 +1,5 @@
 <?php
-		$title='Accueil';
+		$title='Accueil VIP';
 		$pageCSS='accueil';
 		ob_start(); //mise en tempon début
 
@@ -7,7 +7,13 @@
 
 			<div id="corpsAccueil">
 
-				INTERFACE DE GESTION DES VIP, DES DEMANDES ET DES ECHANGES
+				INTERFACE DE GESTION DES VIP
+				<div>
+					<a href ="index.php?page=ajoutVIP">Ajouter VIP</a>
+					<a href ="index.php?page=tutorats">Supprimer</a>
+					<a href ="index.php?page=tutorats">Modifier</a>
+          <a href ="index.php?page=tutorats">Consulter une fiche</a>
+				</div>
 
 			</div>
 

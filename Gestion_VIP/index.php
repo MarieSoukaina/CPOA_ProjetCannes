@@ -50,13 +50,25 @@ if(isset($_SESSION ['Login'])){ //si un utilisateur est connecté
 
 /*----------------------------------------ACCUEIL----------------------------------------*/
 		if($_GET["page"] == "accueil"){
-				require_once("Views/accueil.php");
+			require_once("Views/accueil.php");
+		}
+
+		elseif ($_GET["page"] == "accueilVIP")
+		{
+			require_once("Views/ficheVIP/accueilVIP.php");
 		}
 
 /*----------------------------------------AJOUT D'UN VIP----------------------------------------*/
 		elseif ($_GET["page"] == "ajoutvip")
-			if(isset($_POST['nomVIP']) && isset($_POST['prenomVIP']) && isset($_POST['dateNaissance']) && isset($_POST['typeVIP']) && isset($_POST['infoVIP'])){
-				$vm->ajouterVIP($_POST['nomVIP'], $_POST['prenomVIP'], $_POST['dateNaissance'], $_POST['typeVIP'], $_POST['infoVIP']);
+			if(isset($_POST['nomVIP']) && isset($_POST['prenomVIP']) && isset($_POST['dateNaissance']) && isset($_POST['typeVIP']) && isset($_POST['infoVIP']))
+			{
+				$dateMauvaisFormat = $_POST['dateNaissance'];
+				$jour = substr($dateMauvaisFormat, 0, 2);
+				$mois = substr($dateMauvaisFormat, 3, 2);
+				$annee = substr($dateMauvaisFormat, 6, 4);
+				$dateNaissanceBonFormat = ''.$annee.'-'.$mois.'-'.$jour.'';
+
+				$vm->ajouterVIP($_POST['nomVIP'], $_POST['prenomVIP'], $dateNaissanceBonFormat, $_POST['typeVIP'], $_POST['infoVIP']);
 			}
 			else{
 				require_once("Views/ficheVIP/ajoutVIP.php");
