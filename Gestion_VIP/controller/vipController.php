@@ -2,7 +2,6 @@
 
     if(!isset($_GET['action']))
     {
-      echo'test';
       require_once("./Views/ficheVIP/accueilvip.php");
     }
 /*----------------------------------------AJOUT D'UN VIP----------------------------------------*/
@@ -23,7 +22,7 @@
   			}
   			else
   			{
-  				require_once("../Views/ficheVIP/ajoutVIP.php");
+  				require_once("./Views/ficheVIP/ajoutVIP.php");
   			}
       }
 
