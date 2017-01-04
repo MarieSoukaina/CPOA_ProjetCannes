@@ -3,7 +3,7 @@
     if(!isset($_GET['action']))
     {
       echo'test';
-      require_once("../Views/ficheVIP/accueilvip.php");
+      require_once("./Views/ficheVIP/accueilvip.php");
     }
 /*----------------------------------------AJOUT D'UN VIP----------------------------------------*/
     elseif(isset($_GET['action']))
