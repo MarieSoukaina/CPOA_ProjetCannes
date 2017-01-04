@@ -2,7 +2,7 @@
 /*----------------------------------------AJOUT D'UNE DEMANDE----------------------------------------*/
     if(isset($_GET['action']))
     {
-      if ($_GET["action"] == "ajoutDemande")
+      if ($_GET["action"] == "ajoutdemandes")
       {
   			if(isset($_POST['nomVIP']) && isset($_POST['prenomVIP']) && isset($_POST['dateNaissance']) && isset($_POST['typeVIP']) && isset($_POST['infoVIP']))
   			{
@@ -11,7 +11,7 @@
   			}
   			else
   			{
-  				require_once("/Views/demandes/ajoutDemande.php");
+  				require_once("./Views/demandes/ajoutDemande.php");
   			}
       }
 

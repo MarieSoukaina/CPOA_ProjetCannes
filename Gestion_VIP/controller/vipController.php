@@ -23,7 +23,7 @@
   			}
   			else
   			{
-  				require_once("../Views/ficheVIP/ajoutVIP.php");
+  				require_once("./Views/ficheVIP/ajoutVIP.php");
   			}
       }
 

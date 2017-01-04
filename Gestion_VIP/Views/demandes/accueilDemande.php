@@ -9,7 +9,7 @@
 
 				INTERFACE DE GESTION DES DEMANDES
 				<div>
-					<a href ="index.php?page=ajoutDemande">Ajouter une demande</a>
+					<a href ="index.php?page=gestiondemandes&action=ajoutdemandes">Ajouter une demande</a>
 					<a href ="index.php?page=supprimervip">Supprimer</a>
 					<a href ="index.php?page=modifiervip">Modifier</a>
           <a href ="index.php?page=consultervip">Consulter une fiche</a>
