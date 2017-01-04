@@ -18,7 +18,7 @@
         $requete = $this->executerRequete('DELETE FROM ... WHERE ... ');
       }
 
-      public function getVIP()
+      public function getAllVIP()
       {
         $requete = $this->executerRequete('SELECT ... FROM ...');
       }

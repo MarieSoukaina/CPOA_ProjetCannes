@@ -53,48 +53,31 @@ if(isset($_SESSION ['Login'])){ //si un utilisateur est connecté
 			require_once("Views/accueil.php");
 		}
 
-		elseif ($_GET["page"] == "accueilvip")
+		elseif ($_GET["page"] == "gestionvip")
 		{
-			require_once("Views/ficheVIP/accueilvip.php");
+			require_once("controller/vipController.php");
 		}
 
-/*----------------------------------------AJOUT D'UN VIP----------------------------------------*/
-		elseif ($_GET["page"] == "ajoutvip")
-			if(isset($_POST['nomVIP']) && isset($_POST['prenomVIP']) && isset($_POST['dateNaissance']) && isset($_POST['typeVIP']) && isset($_POST['infoVIP']))
-			{
-				$dateMauvaisFormat = $_POST['dateNaissance'];
-				$jour = substr($dateMauvaisFormat, 0, 2);
-				$mois = substr($dateMauvaisFormat, 3, 2);
-				$annee = substr($dateMauvaisFormat, 6, 4);
-				$dateNaissanceBonFormat = ''.$annee.'-'.$mois.'-'.$jour.'';
-
-				$vm->ajouterVIP($_POST['nomVIP'], $_POST['prenomVIP'], $dateNaissanceBonFormat, $_POST['typeVIP'], $_POST['infoVIP']);
-				echo 'Ajout effectué !'; //TODO : mieux gerer la redirection après ajout
-			}
-			else{
-				require_once("Views/ficheVIP/ajoutVIP.php");
-			}
-
+		elseif ($_GET["page"] == "gestionechanges")
+		{
+			require_once("controller/echangesController.php");
 		}
 
-/*----------------------------------------SUPPRESSION D'UN VIP----------------------------------------*/
-		elseif ($_GET["page"] == "modificationVIP") {
-			require_once("Views/ficheVIP/modificationVIP.php");
-		}
-
-/*----------------------------------------SUPPRESSION D'UN VIP----------------------------------------*/
-		elseif ($_GET["page"] == "suppressionVIP") {
-			require_once("Views/ficheVIP/suppressionVIP.php");
+		elseif ($_GET["page"] == "gestiondemandes")
+		{
+			require_once("controller/demandesController.php");
 		}
 
 /*----------------------------------------ERREUR = PAGE INEXISTANTE----------------------------------------*/
-		else{
+		else
+		{
 			$erreur = 404;
 			$messageErreur = "La page demandée n'existe pas ou a été supprimée";
 			require_once("Views/erreur.php");
 		}
 
 	}
+}
 
 else //si personne n'est connecté, on afficher la page de connexion
 {
