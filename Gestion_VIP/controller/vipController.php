@@ -1,6 +1,12 @@
 <?php
+
+    if(!isset($_GET['action']))
+    {
+      echo'test';
+      require_once("../Views/ficheVIP/accueilvip.php");
+    }
 /*----------------------------------------AJOUT D'UN VIP----------------------------------------*/
-    if(isset($_GET['action']))
+    elseif(isset($_GET['action']))
     {
       if ($_GET["action"] == "ajoutvip")
       {
