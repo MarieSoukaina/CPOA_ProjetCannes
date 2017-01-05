@@ -1,4 +1,6 @@
 <?php
+    require_once("Model/VIPManager.php");
+    $vm = new VIPManager();
 
     if(!isset($_GET['action']))
     {
@@ -41,7 +43,8 @@
   /*----------------------------------------CONSULTER LA FICHE D'UN VIP----------------------------------------*/
   			elseif ($_GET["action"] == "consultervip")
   			{
-  				echo "test";
+          $listeVIP = $vm->getAllVIP();
+  				require_once("Views/ficheVIP/consultervip.php");
   			}
     }
 

@@ -20,7 +20,9 @@
 
       public function getAllVIP()
       {
-        $requete = $this->executerRequete('SELECT ... FROM ...');
+        $requete = $this->executerRequete('SELECT * FROM vip');
+        $data = $requete->fetchAll(PDO::FETCH_ASSOC);
+        return $data;
       }
 
     }
