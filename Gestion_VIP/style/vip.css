@@ -24,3 +24,23 @@ th {
     background: #BFBFBF;
     padding: 10px 20px;
 }
+
+.suppr
+{
+	width:2%;
+}
+
+.poubelle
+{
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+	height:20px;
+	opacity:0.8;
+	transition-duration: 0.2s;
+}
+
+.poubelle:hover
+{
+	opacity:1;
+}

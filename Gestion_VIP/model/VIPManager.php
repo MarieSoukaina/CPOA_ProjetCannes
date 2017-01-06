@@ -13,9 +13,9 @@
         $requete = $this->executerRequete('UPDATE ... SET .... WHERE....');
       }
 
-      public function supprimerVIP()
+      public function supprimerVIP($idVIP)
       {
-        $requete = $this->executerRequete('DELETE FROM ... WHERE ... ');
+        $requete = $this->executerRequete('DELETE FROM vip WHERE id=?', array($idVIP));
       }
 
       public function getAllVIP()

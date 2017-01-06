@@ -4,7 +4,7 @@
 
     if(!isset($_GET['action']))
     {
-      require_once("./Views/ficheVIP/accueilvip.php");
+      header('Location: index.php?page=gestionvip&action=consultervip');
     }
 /*----------------------------------------AJOUT D'UN VIP----------------------------------------*/
     elseif(isset($_GET['action']))
@@ -20,7 +20,7 @@
   				$dateNaissanceBonFormat = ''.$annee.'-'.$mois.'-'.$jour.'';
 
   				$vm->ajouterVIP($_POST['nomVIP'], $_POST['prenomVIP'], $dateNaissanceBonFormat, $_POST['typeVIP'], $_POST['infoVIP']);
-  				echo 'Ajout effectué !'; //TODO : mieux gerer la redirection après ajout
+  				header('Location: index.php?page=gestionvip&action=consultervip');
   			}
   			else
   			{
@@ -35,9 +35,13 @@
   			}
 
   /*----------------------------------------SUPPRESSION D'UN VIP----------------------------------------*/
-  			elseif ($_GET["action"] == "suppressionVIP")
+  			elseif ($_GET["action"] == "supprimervip")
   			{
-  				require_once("Views/ficheVIP/suppressionVIP.php");
+  				if(isset($_GET['idvip']))
+          {
+            $vm->supprimerVIP($_GET['idvip']);
+            header('Location: index.php?page=gestionvip&action=consultervip');
+          }
   			}
 
   /*----------------------------------------CONSULTER LA FICHE D'UN VIP----------------------------------------*/
