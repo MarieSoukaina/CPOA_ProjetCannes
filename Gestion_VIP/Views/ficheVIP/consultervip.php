@@ -11,7 +11,7 @@
 
 			</div>
 
-			<a href="index.php?page=gestionvip&action=ajoutvip">Ajouter un VIP</a>
+			<a href="index.php?page=gestionvip&action=ajoutvip" id="boutonAjoutVIP">Ajouter un VIP</a>
 
 			<div name="listeVIP">
 			<table>
