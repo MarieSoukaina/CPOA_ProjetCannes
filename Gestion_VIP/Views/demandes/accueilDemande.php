@@ -1,21 +1,44 @@
 <?php
 		$title='Accueil Demande';
-		$pageCSS='accueil';
+		$pageCSS='demande';
 		ob_start(); //mise en tempon début
 
 		echo '
 
-			<div id="corpsAccueil">
-
-				INTERFACE DE GESTION DES DEMANDES
-				<div>
-					<a href ="index.php?page=gestiondemandes&action=ajoutdemandes">Ajouter une demande</a>
-					<a href ="index.php?page=supprimervip">Supprimer</a>
-					<a href ="index.php?page=modifiervip">Modifier</a>
-          <a href ="index.php?page=consultervip">Consulter une fiche</a>
-				</div>
-
+			<div id="listeBoutons">
+					<a href ="index.php?page=gestiondemandes&action=ajoutDemande" id="boutonsDemande">Ajouter une demande</a>
 			</div>
+
+			<div id="demande">
+				<table id="tablecours">
+					<thead>
+						<tr>
+						  <th>ID</th>
+							<th>Nom du demandeur</th>
+							<th>Type de la demande</th>
+							<th>Description de la demande</th>
+							<th>Date de la demande</th>
+							<th>Responsable de la demande</th>
+						</tr>
+					</thead>
+					<tbody>';
+								foreach ($demandes as $demande)
+								{
+									echo '<tr><td>'.$demande['demandeID'].'</td>';
+									echo '<td>'.$demande['date'].'</td>';
+									echo '<td>'.$demande['description'].'</td>';
+									echo '<td>test</td>';
+									echo '<td>test</td>';
+									echo '<td>test</td>';
+									echo '<td><a href ="index.php?page=gestiondemandes&action=modificationDemande&id='.$demande['demandeID'].'" id="boutonsModifier">Modifier</a></td>';
+									echo '<td><a href ="index.php?page=gestiondemandes&action=suppressionDemande&id='.$demande['demandeID'].'" id="boutonsSupprimer">Supprimer</a></td></tr>';
+
+								}
+				echo '</tbody>
+				</table>
+			</div>
+
+
 
 			';
 

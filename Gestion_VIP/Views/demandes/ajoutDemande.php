@@ -3,9 +3,7 @@
 	$pageCSS='ajoutVIP';
 	ob_start(); //mise en tampon début
 		echo '
-		<div id="boxLogin" class="inscri">
-		<h1>Ajouter une demande</h1>
-		<div id="WarpperForm">
+		<div class="formulaireAjoutTutorat">
 				<form method="post" action="envoieFormulaire.php">
 
 	        <p><label>Nom du VIP* </label><input type="text" name="nom" required/></p>
@@ -28,8 +26,8 @@
 
 
         	<p><button type="submit" name="envoyer">Envoyer</button></p>
-    </form>
-		</div>
+    		</form>
+			</div>
 		</div>
 
 			';
