@@ -9,17 +9,21 @@
         $result=$req->fetchALL(PDO::FETCH_ASSOC);
         return $result;
       }
-
-      public function supprDemande($id)
+/*
+      public function ajouterDemande($nom,$prenom,$date,$description)
       {
-        $req = $this->executerRequete('DELETE FROM demande WHERE demandeID=?', array($id));
+        $req=$this->executerRequete('INSERT INTO demande (nom,prenom,date,description) VALUES (?,?,?,?)',array($nom,$prenom,$date,$description);
       }
 
-      public function getDemandeID($id)
+*/
+      public function modifierDemande()
       {
-        $req = $this->executerRequete('SELECT demandeID FROM demande WHERE demandeID=?', array($id));
-        $result=$req->fetchALL(PDO::FETCH_ASSOC);
-        return $result['demandeID'];
+        $req = $this->executerRequete('UPDATE FROM demande SET demandeID=?, date=?, description=? WHERE demandeID=?', array($id));
+      }
+
+      public function supprimerDemande($id)
+      {
+        $req = $this->executerRequete('DELETE FROM demande WHERE demandeID=?', array($id));
       }
 
     }

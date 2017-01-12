@@ -3,32 +3,30 @@
 	$pageCSS='ajoutVIP';
 	ob_start(); //mise en tampon début
 		echo '
-		<div class="formulaireAjoutTutorat">
-				<form method="post" action="envoieFormulaire.php">
+		<h1>Ajouter une demande d\'un VIP</h1>
+			<div class="formulaireAjoutTutorat">
+					<form method="post" action="index.php?page=gestiondemandes&action=ajoutDemande" enctype="multipart/form-data">
 
-	        <p><label>Nom du VIP* </label><input type="text" name="nom" required/></p>
+		        <p><label>Nom du VIP* </label></p><p><input type="text" name="nom" required/></p>
 
-	        <p><label>Prenom du VIP* </label><input type="text" name="prenom"  required/></p>
+		        <p><label>Prenom du VIP* </label></p><p><input type="text" name="prenom"  required/></p>
 
-					<p><label>Date</label><input type="text" name="mail"/></p>
+						<p><label>Date</label></p><p><input type="date" name="date"/></p>
 
-					<label>Mail</label>
-	        <input class="radioB" type="radio" name="echange" value="mail" required/>
+						<label>Mail</label>
+		        <input type="radio" name="echange" value="mail" required/>
+						<label>Lettre</label>
+		        <input type="radio" name="echange" value="lettre" required/>
+						<label>Oral</label>
+		        <input type="radio" name="echange" value="oral" required/>
+						<label>Téléphone</label>
+		        <input type="radio" name="echange" value="telephone" required/>
 
-					<label>Lettre</label>
-	        <input class="radioB" type="radio" name="echange" value="lettre" required/>
+						<p><label>Description de la demande</label></p><p><textarea name="description"></textarea></p>
 
-					<label>Oral</label>
-	        <input class="radioB" type="radio" name="echange" value="oral" required/>
-
-					<label>Téléphone</label>
-	        <input class="radioB" type="radio" name="echange" value="telephone" required/>
-
-
-        	<p><button type="submit" name="envoyer">Envoyer</button></p>
-    		</form>
+	        	<p><button type="submit" name="envoyer">Envoyer</button></p>
+	    		</form>
 			</div>
-		</div>
 
 			';
 	$content = ob_get_contents(); //récuprération du tampon dons une var

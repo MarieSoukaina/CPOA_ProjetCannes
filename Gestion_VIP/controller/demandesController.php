@@ -4,10 +4,16 @@
     {
       if ($_GET["action"] == "ajoutDemande")
       {
-  			if(isset($_POST['nomVIP']) && isset($_POST['prenomVIP']) && isset($_POST['dateNaissance']) && isset($_POST['typeVIP']) && isset($_POST['infoVIP']))
+  			if(isset($_POST['nom']) && isset($_POST['prenom']) && isset($_POST['date']) && isset($_POST['echange']))
   			{
-
-  				echo 'testaaaaaa!'; //TODO : mieux gerer la redirection après ajout
+          $nom=$_POST['nom'];
+          $prenom=$_POST['prenom'];
+          $date=$_POST['date'];
+          $echange=$_POST['echange'];
+          $description=$_POST['description'];
+          /*
+          $dm->ajouterDemande();
+          */
   			}
   			else
   			{
@@ -17,13 +23,12 @@
 /*----------------------------------------MODIFICATION D'UN VIP----------------------------------------*/
   		elseif ($_GET["action"] == "modificationDemande")
   		{
-        echo"mod";
+        echo "string";
   		}
 
 /*----------------------------------------SUPPRESSION D'UN VIP----------------------------------------*/
   		elseif ($_GET["action"] == "suppressionDemande")
   		{
-        //$demandeID=$dm->getDemandeID($_GET["id"]);
         $dm->supprDemande($_GET["id"]);
         header('Location: index.php?page=gestiondemandes');
   		}
