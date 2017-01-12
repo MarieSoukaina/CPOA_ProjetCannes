@@ -29,16 +29,16 @@
       }
 
   /*----------------------------------------MODIFICATION D'UN VIP----------------------------------------*/
-  			elseif ($_GET["action"] == "modificationVIP")
+  			elseif ($_GET["action"] == "modifiervip")
   			{
           if(isset($_GET['idvip']))
           {
-            $infoVIP = $vm->getInfoVIP($_GET['idvip']));
+            $infoVIP = $vm->getInfoVIP($_GET['idvip']);
             require_once("Views/ficheVIP/modificationVIP.php");
           }
           elseif (isset($_POST['nom']) && isset($_POST['prenom']) && isset($_POST['dateNaissance']) && isset($_POST['typeVIP']) && isset($_POST['infoVIP']))
           {
-            $vm->modifierVIP($_POST['nom'], $_POST['prenom'], $_POST['dateNaissance'], $_POST['typeVIP'], $_POST['infoVIP'], $idVIP)
+            $vm->modifierVIP($_POST['nom'], $_POST['prenom'], $_POST['dateNaissance'], $_POST['typeVIP'], $_POST['infoVIP'], $_POST['idVIP']);
             header('Location: index.php?page=gestionvip&action=consultervip');
           }
 
