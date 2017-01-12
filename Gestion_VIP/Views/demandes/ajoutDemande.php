@@ -7,9 +7,9 @@
 			<div class="formulaireAjoutTutorat">
 					<form method="post" action="index.php?page=gestiondemandes&action=ajoutDemande" enctype="multipart/form-data">
 
-		        <p><label>Nom du VIP* </label></p><p><input type="text" name="nom" required/></p>
+		        <p><label>Nom du VIP* </label></p><p><input type="text" name="nom" value="'.$infoVIP['nom'].'" required/></p>
 
-		        <p><label>Prenom du VIP* </label></p><p><input type="text" name="prenom"  required/></p>
+		        <p><label>Prenom du VIP* </label></p><p><input type="text" name="prenom" value="'.$infoVIP['prenom'].'" required/></p>
 
 						<p><label>Date</label></p><p><input type="date" name="date"/></p>
 
