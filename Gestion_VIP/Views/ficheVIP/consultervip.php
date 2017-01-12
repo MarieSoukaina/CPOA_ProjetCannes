@@ -17,7 +17,6 @@
 			<table>
 				<thead>
 					<tr>
-							<th data-field="id">#</th>
 							<th data-field="nom">Nom</th>
 							<th data-field="prenom">Prénom</th>
 							<th data-field="dateNaissance">Date de Naissance</th>
@@ -32,7 +31,6 @@
 			{
 				echo'
 				<tr>
-					<td>'.$vip['id'].'</td>
 					<td>'.$vip['nom'].'</td>
 					<td>'.$vip['prenom'].'</td>
 					<td>'.$vip['dateNaissance'].'</td>
