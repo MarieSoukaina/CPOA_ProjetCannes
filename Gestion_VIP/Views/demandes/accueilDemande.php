@@ -1,12 +1,13 @@
 <?php
 		$title='Accueil Demande';
-		$pageCSS='demande';
+		$pageCSS='vip';
 		ob_start(); //mise en tempon début
 
 		echo '
-
+			</br>
+			</br>
 			<div id="listeBoutons">
-					<a href ="index.php?page=gestiondemandes&action=ajoutDemande" id="boutonsDemande">Ajouter une demande</a>
+					<a href ="index.php?page=gestiondemandes&action=ajoutDemande" id="boutonAjoutVIP">Ajouter une demande</a>
 			</div>
 
 			<div id="demande">
@@ -15,10 +16,12 @@
 						<tr>
 						  <th>ID</th>
 							<th>Nom du demandeur</th>
-							<th>Type de la demande</th>
-							<th>Description de la demande</th>
+							<th>Type</th>
+							<th>Description</th>
 							<th>Date de la demande</th>
-							<th>Responsable de la demande</th>
+							<th>Responsable</th>
+							<th>Mod.</th>
+							<th>Suppr.</th>
 						</tr>
 					</thead>
 					<tbody>';
@@ -30,8 +33,8 @@
 									echo '<td>'.$demande['date'].'</td>';
 									echo '<td>test</td>';
 									echo '<td>test</td>';
-									echo '<td><a href ="index.php?page=gestiondemandes&action=modificationDemande&id='.$demande['demandeID'].'" id="boutonsDemande">Modifier</a></td>';
-									echo '<td><a href ="index.php?page=gestiondemandes&action=suppressionDemande&id='.$demande['demandeID'].'" id="boutonsDemande">Supprimer</a></td></tr>';
+									echo '<td class="suppr"><a href ="index.php?page=gestiondemandes&action=modificationDemande&id='.$demande['demandeID'].'" id="boutonsDemande"><img class="poubelle" src="media/images/modifier.png" alt="poubelle"></a></td>';
+									echo '<td class="suppr"><a href ="index.php?page=gestiondemandes&action=suppressionDemande&id='.$demande['demandeID'].'" id="boutonsDemande"><img class="poubelle" src="media/images/poubelle.png" alt="poubelle"></a></td></tr>';
 
 								}
 				echo '</tbody>

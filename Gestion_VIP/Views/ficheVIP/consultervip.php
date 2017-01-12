@@ -4,14 +4,12 @@
 		ob_start(); //mise en tempon début
 
 		echo '
+		</br>
+		</br>
 
-			<div id="corpsAccueil">
-
-				INTERFACE DE GESTION DES VIP, DES DEMANDES ET DES ECHANGES
-
-			</div>
-
+		<div id="listeBoutons">
 			<a href="index.php?page=gestionvip&action=ajoutvip" id="boutonAjoutVIP">Ajouter un VIP</a>
+		</div>
 
 			<div name="listeVIP">
 			<table>
@@ -24,7 +22,8 @@
 							<th data-field="info">Informations</th>
 							<th>Mod.</th>
 							<th>Suppr.</th>
-							<th>Aj. Demande</th>
+							<th>Dem.</th>
+							<th>Ech.</th>
 					</tr>
 				</thead>
 				<tbody>';
@@ -37,9 +36,10 @@
 					<td>'.$vip['dateNaissance'].'</td>
 					<td>'.$vip['typeVIP'].'</td>
 					<td>'.$vip['infoUtile'].'</td>
-					<td class="suppr"><a href="index.php?page=gestionvip&action=modifiervip&idvip='.$vip['id'].'"><img class="poubelle" src="media/images/modifier.png" alt="poubelle"><a></td>
-					<td class="suppr"><a href="index.php?page=gestionvip&action=supprimervip&idvip='.$vip['id'].'"><img class="poubelle" src="media/images/poubelle.png" alt="poubelle"><a></td>
-					<td class="suppr"><a href="index.php?page=gestiondemandes&action=ajoutDemande&idvip='.$vip['id'].'"><img class="poubelle" src="media/images/poubelle.png" alt="poubelle"><a></td>
+					<td class="suppr"><a href="index.php?page=gestionvip&action=modifiervip&idvip='.$vip['id'].'"><img class="poubelle" src="media/images/modifier.png" alt="poubelle"></a></td>
+					<td class="suppr"><a href="index.php?page=gestionvip&action=supprimervip&idvip='.$vip['id'].'"><img class="poubelle" src="media/images/poubelle.png" alt="poubelle"></a></td>
+					<td class="suppr"><a href="index.php?page=gestiondemandes&action=ajoutDemande&idvip='.$vip['id'].'"><img class="poubelle" src="media/images/ajouterdemande.png" alt="poubelle"></a></td>
+					<td class="suppr"><a href="index.php?page=gestiondemandes&action=ajoutDemande&idvip='.$vip['id'].'"><img class="poubelle" src="media/images/ajouterechange.png" alt="poubelle"></a></td>
 				</tr>
 				';
 			}
