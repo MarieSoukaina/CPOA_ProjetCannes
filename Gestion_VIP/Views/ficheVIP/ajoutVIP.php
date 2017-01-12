@@ -4,7 +4,7 @@
 		ob_start(); //mise en tampon début
 
 		echo '
-		<form method="post" action=index.php?page=ajoutvip>
+		<form method="post" action=index.php?page=gestionvip&action=ajoutvip>
 
 			<p>Nom : <input type="text" name="nomVIP" placeholder="Nom"></p>
 
