@@ -1,49 +1,37 @@
-<html>
-	<head>
-		<title>Ajouter demande</title>
+<?php
+	$title='Ajout VIP';
+	$pageCSS='ajoutVIP';
+	ob_start(); //mise en tampon début
+		echo '
+		<h1>Ajouter une demande d\'un VIP</h1>
+			<div class="formulaireAjoutTutorat">
+					<form method="post" action="index.php?page=gestiondemandes&action=ajoutDemande" enctype="multipart/form-data">
 
-		<link href="./style/inscriptionConnexion.css" media="all" rel="stylesheet " type="text/css" />
-	</head>
+		        <p><label>Nom du VIP* </label></p><p><input type="text" name="nom" required/></p>
 
-	<?php
+		        <p><label>Prenom du VIP* </label></p><p><input type="text" name="prenom"  required/></p>
 
-			echo '
-			<div id="boxLogin" class="inscri">
-			<h1>Ajouter une demande</h1>
-			<div id="WarpperForm">
-					<form method="post" action="envoieFormulaire.php">
+						<p><label>Date</label></p><p><input type="date" name="date"/></p>
 
-	        <label>Nom du VIP*</label>
-						<input type="text" name="nom" required/>
-
-	        <label>Prenom du VIP*</label>
-						<input type="text" name="prenom"  required/>
-
-
-
-					<label>Date</label>
-						<input type="text" name="mail"  />
-
-
-
-						<div class="rbutton"><label>Mail</label>
-		        <input class="radioB" type="radio" name="echange" value="mail" required/>
-
+						<label>Mail</label>
+		        <input type="radio" name="echange" value="mail" required/>
 						<label>Lettre</label>
-		        <input class="radioB" type="radio" name="echange" value="lettre" required/></div>
-
-						<div class="rbutton"><label>Oral</label>
-		        <input class="radioB" type="radio" name="echange" value="oral" required/>
-
+		        <input type="radio" name="echange" value="lettre" required/>
+						<label>Oral</label>
+		        <input type="radio" name="echange" value="oral" required/>
 						<label>Téléphone</label>
-		        <input class="radioB" type="radio" name="echange" value="telephone" required/></div>
+		        <input type="radio" name="echange" value="telephone" required/>
 
+						<p><label>Description de la demande</label></p><p><textarea name="description"></textarea></p>
 
-	        <button type="submit" name="envoyer">Envoyer</button>
-	    </form>
+	        	<p><button type="submit" name="envoyer">Envoyer</button></p>
+	    		</form>
 			</div>
-			</div>
 
-				';
+			';
+	$content = ob_get_contents(); //récuprération du tampon dons une var
+	ob_end_clean(); // vide le tampon
+	require_once("./Views/layout.php"); //appelle layout avec le nouveau content
 
-	?>
+
+?>

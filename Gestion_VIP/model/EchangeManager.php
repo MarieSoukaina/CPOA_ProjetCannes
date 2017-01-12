@@ -1,11 +1,11 @@
 <?php
     require_once ("Model.php");
-    class Echange extends Modele
+    class EchangeManager extends Model
     {
 
       public function getEchange()
       {
-        $requete = $this->execution('SELECT ... FROM ... ');
+        $requete = $this->executerRequete('SELECT * FROM echanges ');
       }
 
     }
