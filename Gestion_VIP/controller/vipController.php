@@ -1,9 +1,10 @@
 <?php
+    require_once("Model/VIPManager.php");
+    $vm = new VIPManager();
 
     if(!isset($_GET['action']))
     {
-      echo'test';
-      require_once("./Views/ficheVIP/accueilvip.php");
+      header('Location: index.php?page=gestionvip&action=consultervip');
     }
 /*----------------------------------------AJOUT D'UN VIP----------------------------------------*/
     elseif(isset($_GET['action']))
@@ -19,7 +20,7 @@
   				$dateNaissanceBonFormat = ''.$annee.'-'.$mois.'-'.$jour.'';
 
   				$vm->ajouterVIP($_POST['nomVIP'], $_POST['prenomVIP'], $dateNaissanceBonFormat, $_POST['typeVIP'], $_POST['infoVIP']);
-  				echo 'Ajout effectué !'; //TODO : mieux gerer la redirection après ajout
+  				header('Location: index.php?page=gestionvip&action=consultervip');
   			}
   			else
   			{
@@ -28,21 +29,36 @@
       }
 
   /*----------------------------------------MODIFICATION D'UN VIP----------------------------------------*/
-  			elseif ($_GET["action"] == "modificationVIP")
+  			elseif ($_GET["action"] == "modifiervip")
   			{
-  				require_once("Views/ficheVIP/modificationVIP.php");
+          if(isset($_GET['idvip']))
+          {
+            $infoVIP = $vm->getInfoVIP($_GET['idvip']);
+            require_once("Views/ficheVIP/modificationVIP.php");
+          }
+          elseif (isset($_POST['nom']) && isset($_POST['prenom']) && isset($_POST['dateNaissance']) && isset($_POST['typeVIP']) && isset($_POST['infoVIP']))
+          {
+            $vm->modifierVIP($_POST['nom'], $_POST['prenom'], $_POST['dateNaissance'], $_POST['typeVIP'], $_POST['infoVIP'], $_POST['idVIP']);
+            header('Location: index.php?page=gestionvip&action=consultervip');
+          }
+
   			}
 
   /*----------------------------------------SUPPRESSION D'UN VIP----------------------------------------*/
-  			elseif ($_GET["action"] == "suppressionVIP")
+  			elseif ($_GET["action"] == "supprimervip")
   			{
-  				require_once("Views/ficheVIP/suppressionVIP.php");
+  				if(isset($_GET['idvip']))
+          {
+            $vm->supprimerVIP($_GET['idvip']);
+            header('Location: index.php?page=gestionvip&action=consultervip');
+          }
   			}
 
   /*----------------------------------------CONSULTER LA FICHE D'UN VIP----------------------------------------*/
   			elseif ($_GET["action"] == "consultervip")
   			{
-  				echo "test";
+          $listeVIP = $vm->getAllVIP();
+  				require_once("Views/ficheVIP/consultervip.php");
   			}
     }
 
