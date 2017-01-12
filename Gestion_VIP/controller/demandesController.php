@@ -4,40 +4,46 @@
     {
       if ($_GET["action"] == "ajoutDemande")
       {
-  			if(isset($_POST['nomVIP']) && isset($_POST['prenomVIP']) && isset($_POST['dateNaissance']) && isset($_POST['typeVIP']) && isset($_POST['infoVIP']))
+  			if(isset($_POST['nom']) && isset($_POST['prenom']) && isset($_POST['date']) && isset($_POST['echange']))
   			{
-  				$dateMauvaisFormat = $_POST['dateNaissance'];
-  				$jour = substr($dateMauvaisFormat, 0, 2);
-  				$mois = substr($dateMauvaisFormat, 3, 2);
-  				$annee = substr($dateMauvaisFormat, 6, 4);
-  				$dateNaissanceBonFormat = ''.$annee.'-'.$mois.'-'.$jour.'';
-
-  				$vm->ajouterVIP($_POST['nomVIP'], $_POST['prenomVIP'], $dateNaissanceBonFormat, $_POST['typeVIP'], $_POST['infoVIP']);
-  				echo 'Ajout effectué !'; //TODO : mieux gerer la redirection après ajout
+          $nom=$_POST['nom'];
+          $prenom=$_POST['prenom'];
+          $date=$_POST['date'];
+          $echange=$_POST['echange'];
+          $description=$_POST['description'];
+          /*
+          $dm->ajouterDemande();
+          */
   			}
   			else
   			{
-  				require_once("/Views/ficheVIP/ajoutDemande.php");
+  				require_once("./Views/demandes/ajoutDemande.php");
   			}
       }
+/*----------------------------------------MODIFICATION D'UN VIP----------------------------------------*/
+  		elseif ($_GET["action"] == "modificationDemande")
+  		{
+        echo "string";
+  		}
 
-  /*----------------------------------------MODIFICATION D'UN VIP----------------------------------------*/
-  			elseif ($_GET["action"] == "modificationVIP")
-  			{
-  				require_once("Views/ficheVIP/modificationVIP.php");
-  			}
+/*----------------------------------------SUPPRESSION D'UN VIP----------------------------------------*/
+  		elseif ($_GET["action"] == "suppressionDemande")
+  		{
+        $dm->supprDemande($_GET["id"]);
+        header('Location: index.php?page=gestiondemandes');
+  		}
 
-  /*----------------------------------------SUPPRESSION D'UN VIP----------------------------------------*/
-  			elseif ($_GET["action"] == "suppressionDemande")
-  			{
-  				require_once("Views/ficheVIP/suppressionDemande.php");
-  			}
-
-  /*----------------------------------------CONSULTER LA FICHE D'UN VIP----------------------------------------*/
-  			elseif ($_GET["action"] == "consultervip")
-  			{
+/*----------------------------------------CONSULTER LA FICHE D'UN VIP----------------------------------------*/
+  		elseif ($_GET["action"] == "consultervip")
+  		{
   				echo "test";
-  			}
+  		}
     }
+    else
+    {
+      $demandes=$dm->getDemande();
+      require_once("/Views/demandes/accueilDemande.php");
+    }
+
 
 ?>

@@ -3,8 +3,12 @@ session_name ('p1501615'); //nommer la session
 session_start (); //start la session actuelle
 require_once("model/StaffManager.php");
 require_once("model/VIPManager.php");
+require_once("model/DemandeManager.php");
+require_once("model/EchangeManager.php");
 $sm = new StaffManager();
 $vm = new VIPManager();
+$dm = new DemandeManager();
+$em = new EchangeManager();
 
 if( isset($_POST['identifiant']) && isset($_POST['motDePasse']) ) //on test que les login soit entrés
 {
