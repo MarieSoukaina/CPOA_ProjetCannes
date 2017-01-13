@@ -1,4 +1,4 @@
-<?php
+	<?php
 		$title='Consulter VIP';
 		$pageCSS='vip';
 		ob_start(); //mise en tempon début

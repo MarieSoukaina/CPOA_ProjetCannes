@@ -19,11 +19,21 @@
   			{
   				require_once("./Views/demandes/ajoutDemande.php");
   			}
-      }
+    }
 /*----------------------------------------MODIFICATION D'UN VIP----------------------------------------*/
-  		elseif ($_GET["action"] == "modificationDemande")
+  	elseif ($_GET["action"] == "modificationDemande")
   		{
-        echo "string";
+        if(isset($_GET['demandeID']))
+        {
+          $infosDemande=$dm->getDemandeID($_GET['demandeID']);
+          $membrestaff=$dm->getMembre();
+          require_once("Views/demandes/modificationDemande.php");
+        }
+        elseif (isset($_POST['nomDemandeur']) && isset($_POST['echange']) && isset($_POST['description']) && isset($_POST['dateDemande']) && isset($_POST['nomMembre']))
+        {
+          $dm->modifierDemande($_POST['dateDemande'], $_POST['description'], $_POST['echange'], $_POST['nomMembre'], $_POST['nomDemandeur'], $_POST['demandeID']);
+          header('Location: index.php?page=gestiondemandes');
+        }
   		}
 
 /*----------------------------------------SUPPRESSION D'UN VIP----------------------------------------*/

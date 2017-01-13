@@ -5,13 +5,9 @@
 		echo '
 		<h1>Ajouter une demande d\'un VIP</h1>
 			<div class="formulaireAjoutTutorat">
-					<form method="post" action="index.php?page=gestiondemandes&action=ajoutDemande" enctype="multipart/form-data">
+					<form method="post" action="index.php?page=gestiondemandes&action=modificationDemande" enctype="multipart/form-data">
 
-		        <p><label>Nom du VIP* </label></p><p><input type="text" name="nom" required/></p>
-
-		        <p><label>Prenom du VIP* </label></p><p><input type="text" name="prenom"  required/></p>
-
-						<p><label>Date</label></p><p><input type="date" name="date"/></p>
+						<p><label>Nom du demandeur</label><input type="text" name="nomDemandeur" value="'.$infosDemande['nom'].'"/></p>
 
 						<label>Mail</label>
 		        <input type="radio" name="echange" value="mail" required/>
@@ -22,7 +18,21 @@
 						<label>Téléphone</label>
 		        <input type="radio" name="echange" value="telephone" required/>
 
-						<p><label>Description de la demande</label></p><p><textarea name="description" ></textarea></p>
+						<p><label>Description de la demande</label><textarea name="description" >'.$infosDemande['description'].'</textarea></p>
+
+						<p><label>Date</label><input type="date" name="dateDemande" value="'.$infosDemande['dateDemande'].'"/></p>
+
+						<p><label>Membre du Festival</label>
+						<select name="nomMembre" >';
+							foreach($membrestaff as $option)
+							{
+								echo'<option value='.$option['motDePasse'].'> '.$option['motDePasse'].'</option>';
+							}
+						echo'
+						</select>
+
+						<input type="hidden" name="demandeID" value="'.$infosDemande['demandeID'].'">
+
 
 	        	<p><button type="submit" name="envoyer">Envoyer</button></p>
 	    		</form>
