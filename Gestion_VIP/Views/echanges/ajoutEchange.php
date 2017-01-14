@@ -5,20 +5,15 @@
 		echo '
 		<h1>Ajouter un échange</h1>
 			<div class="formulaireAjoutTutorat">
-					<form method="post" action="index.php?page=gestiondemandes&action=ajouteEchange" enctype="multipart/form-data">
+					<form method="post" action="index.php?page=gestionechanges&action=ajouteEchange" enctype="multipart/form-data">
 
-						<p><label>Nom du demandeur</label><input type="text" name="nomEchange"/></p>
+						<p><label>Expéditeur</label><input type="text" name="expediteur"/></p>
 
 						<p><label>Date</label><input type="date" name="dateEchange" /></p>
 
 						<p><label>Type</label><input type="type" name="type" /></p>
 
-            <p><label>Destinataire</label>
-            <select name="destinataire">
-              <option value="Bon">Bon</option>
-              <option value="Durant">Durant</option>
-              <option value="Dupont">Dupont</option>
-            </p>
+            <p><label>Destinataire</label><input type="text" name="destinataire"/></p>
 
 
 	        	<p><button type="submit" name="envoyer">Envoyer</button></p>

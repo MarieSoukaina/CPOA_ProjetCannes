@@ -13,6 +13,7 @@
 				<table>
 					<thead>
 						<tr>
+							<th>Expéditeur</th>
 							<th>Date de la echange</th>
 							<th>Type de la echange</th>
 							<th>Destinataire</th>
@@ -24,7 +25,7 @@
 					<tbody>';
 						foreach ($echanges as $echange)
 						{
-							echo '<td>'.$echange['vip'].'</td>';
+							echo '<td>'.$echange['expediteur'].'</td>';
 							echo '<td>'.$echange['dateEchange'].'</td>';
 							echo '<td>'.$echange['type'].'</td>';
 							echo '<td>'.$echange['destinataire'].'</td>';
