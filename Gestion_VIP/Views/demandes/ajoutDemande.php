@@ -1,5 +1,5 @@
 <?php
-	$title='Ajout VIP';
+	$title='Ajout demande';
 	$pageCSS='ajoutVIP';
 	ob_start(); //mise en tampon début
 		echo '
@@ -7,22 +7,15 @@
 			<div class="formulaireAjoutTutorat">
 					<form method="post" action="index.php?page=gestiondemandes&action=ajoutDemande" enctype="multipart/form-data">
 
-		        <p><label>Nom du VIP* </label></p><p><input type="text" name="nom" value="'.$infoVIP['nom'].'" required/></p>
+						<p><label>Nom du demandeur</label><input type="text" name="nomDemandeur" value="'.$infoVIP['nom'].'" /></p>
 
-		        <p><label>Prenom du VIP* </label></p><p><input type="text" name="prenom" value="'.$infoVIP['prenom'].'" required/></p>
+						<p><label>Prénom du demandeur</label><input type="text" name="prenomDemandeur" value="'.$infoVIP['prenom'].'" /></p>
 
-						<p><label>Date</label></p><p><input type="date" name="date"/></p>
 
-						<label>Mail</label>
-		        <input type="radio" name="echange" value="mail" required/>
-						<label>Lettre</label>
-		        <input type="radio" name="echange" value="lettre" required/>
-						<label>Oral</label>
-		        <input type="radio" name="echange" value="oral" required/>
-						<label>Téléphone</label>
-		        <input type="radio" name="echange" value="telephone" required/>
+						<p><label>Date</label><input type="date" name="dateDemande" /></p>
 
-						<p><label>Description de la demande</label></p><p><textarea name="description"></textarea></p>
+						<p><label>Description de la demande</label><textarea name="description" ></textarea></p>
+
 
 	        	<p><button type="submit" name="envoyer">Envoyer</button></p>
 	    		</form>
