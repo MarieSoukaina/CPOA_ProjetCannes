@@ -7,16 +7,15 @@
 			<div class="formulaireAjoutTutorat">
 					<form method="post" action="index.php?page=gestionechanges&action=modificationEchange" enctype="multipart/form-data">
 
-						<p><label>Nom du demandeur</label><input type="text" name="expediteur" value="'.$infosEchange['expediteur'].'"/></p>
+						<p><label>Expéditeur</label><input type="text" name="expediteur" value="'.$infosEchange['expediteur'].'"/></p>
 
-						<p><label>Date</label><input type="date" name="dateEchange" value="'.$infosEchange['dateEchange'].'"/></p>
+						<p><label>Date</label><input type="date" name="dateEchange" value="'.$infosEchange['dateEchange'].'" /></p>
 
-						<p><label>Description de la demande</label><textarea name="type" >'.$infosEchange['type'].'</textarea></p>
+						<p><label>Type</label><input type="type" name="type" value="'.$infosEchange['type'].'"/></p>
 
-						<p><label>Prénom du demandeur</label><input type="text" name="destinataire"value="'.$infosEchange['destinataire'].'"/></p>
+						<p><label>Destinataire</label><input type="text" name="destinataire" value="'.$infosEchange['destinataire'].'"/></p>
 
-						<input type="hidden" name="demandeID" value="'.$infosEchange['echangeID'].'">
-
+						<input type="hidden" name="echangeID" value="'.$infosEchange['echangeID'].'">
 
 	        	<p><button type="submit" name="envoyer">Envoyer</button></p>
 	    		</form>

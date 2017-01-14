@@ -1,9 +1,9 @@
 <?php
-	$title='Ajout VIP';
+	$title='Modification demande';
 	$pageCSS='ajoutVIP';
 	ob_start(); //mise en tampon début
 		echo '
-		<h1>Ajouter une demande d\'un VIP</h1>
+		<h1>Modification d\'une demande</h1>
 			<div class="formulaireAjoutTutorat">
 					<form method="post" action="index.php?page=gestiondemandes&action=modificationDemande" enctype="multipart/form-data">
 
@@ -17,8 +17,8 @@
 
 						<input type="hidden" name="demandeID" value="'.$infosDemande['demandeID'].'">
 
+						<p><button type="submit" name="envoyer">Envoyer</button></p>
 
-	        	<p><button type="submit" name="envoyer">Envoyer</button></p>
 	    		</form>
 			</div>
 

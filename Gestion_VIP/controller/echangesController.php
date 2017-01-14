@@ -26,11 +26,12 @@
         if(isset($_GET['echangeID']))
         {
           $infosEchange=$em->getEchangeID($_GET['echangeID']);
-          require_once("Views/demandes/modificationEchange.php");
+          require_once("Views/echanges/modificationEchange.php");
         }
-        elseif (isset($_POST['nomDemandeur']) && isset($_POST['prenomDemandeur']) && isset($_POST['description']) && isset($_POST['dateDemande']))
+          elseif (isset($_POST['expediteur']) && isset($_POST['dateEchange']) && isset($_POST['type']) && isset($_POST['destinataire']))
         {
-          $dm->modifierDemande($_POST['nomDemandeur'],$_POST['prenomDemandeur'],$_POST['dateDemande'], $_POST['description'],$_POST['demandeID']);
+          echo "string";
+          $em->modifierEchange($_POST['expediteur'],$_POST['dateEchange'],$_POST['type'], $_POST['destinataire'],$_POST['echangeID']);
           header('Location: index.php?page=gestionechanges');
         }
   		}
