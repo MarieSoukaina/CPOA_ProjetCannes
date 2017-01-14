@@ -4,7 +4,8 @@
 		ob_start(); //mise en tempon début
 
 		echo '
-
+			</br>
+			</br>
 			<div id="listeBoutons">
 					<a href ="index.php?page=gestiondemandes&action=ajoutDemande" id="boutonAjoutVIP">Ajouter une demande</a>
 			</div>

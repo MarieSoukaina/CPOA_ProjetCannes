@@ -7,9 +7,9 @@
 			<div class="formulaireAjoutTutorat">
 					<form method="post" action="index.php?page=gestiondemandes&action=ajoutDemande" enctype="multipart/form-data">
 
-						<p><label>Nom du demandeur</label><input type="text" name="nomDemandeur"/></p>
+						<p><label>Nom du demandeur</label><input type="text" name="nomDemandeur" value="'.$infoVIP['nom'].'" /></p>
 
-						<p><label>Prénom du demandeur</label><input type="text" name="prenomDemandeur"/></p>
+						<p><label>Prénom du demandeur</label><input type="text" name="prenomDemandeur" value="'.$infoVIP['prenom'].'" /></p>
 
 
 						<p><label>Date</label><input type="date" name="dateDemande" /></p>

@@ -19,10 +19,17 @@
             window.location.replace("index.php?page=gestiondemandes&action=ajoutDemande");</script>';
           }*/
   			}
-    	  else
-    		{
-          require_once("./Views/demandes/ajoutDemande.php");
-    		}
+        elseif(isset($_GET['idvip']))
+        {
+          $infoVIP = $vm->getInfoVIP($_GET['idvip']);
+          require_once("Views/demandes/ajoutDemande.php");
+        }
+  		else
+  		{
+            $infoVIP['nom']='';
+            $infoVIP['prenom']='';
+  			require_once("./Views/demandes/ajoutDemande.php");
+  		}
       }
 /*----------------------------------------MODIFICATION D'UN VIP----------------------------------------*/
       elseif ($_GET["action"] == "modificationDemande")
