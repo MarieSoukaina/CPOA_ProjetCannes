@@ -11,14 +11,12 @@
           $prenom=$_POST['prenomDemandeur'];
           $date=$_POST['dateDemande'];
           $description=$_POST['description'];
-          //$echange=$_POST['echangeDemande'];
-          $dm->ajouterDemande($nom,$prenom,$date,$description,NULL);
+          $ajouter = $dm->ajouterDemande($nom,$prenom,$date,$description,NULL);
           header('Location: index.php?page=gestiondemandes');
-          /*if( )
+          /*if()
           {
-            echo "pas ok";
-            //echo '<script language="JavaScript">alert("Veuillez saisir des données valides et présentes dans la base !");
-            //window.location.replace("index.php?page=tutorats");</script>';
+            echo '<script language="JavaScript">alert("Veuillez saisir des données valides et présentes dans la base !");
+            window.location.replace("index.php?page=gestiondemandes&action=ajoutDemande");</script>';
           }*/
   			}
   	  else

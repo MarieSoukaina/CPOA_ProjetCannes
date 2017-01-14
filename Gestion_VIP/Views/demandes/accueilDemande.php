@@ -1,22 +1,24 @@
 <?php
 		$title='Accueil Demande';
-		$pageCSS='demande';
+		$pageCSS='vip';
 		ob_start(); //mise en tempon début
 
 		echo '
 
 			<div id="listeBoutons">
-					<a href ="index.php?page=gestiondemandes&action=ajoutDemande" id="boutonsDemande">Ajouter une demande</a>
+					<a href ="index.php?page=gestiondemandes&action=ajoutDemande" id="boutonAjoutVIP">Ajouter une demande</a>
 			</div>
 
-			<div id="demande">
-				<table id="tablecours">
+			<div id="tablecours">
+				<table>
 					<thead>
 						<tr>
 							<th>Nom du demandeur</th>
 							<th>Prénom du demandeur</th>
 							<th>Date de la demande</th>
 							<th>Description de la demande</th>
+							<th>Modifier</th>
+							<th>Supprimer</th>
 
 						</tr>
 					</thead>
@@ -24,10 +26,11 @@
 								foreach ($demandes as $demande)
 								{
 									echo '<td>'.$demande['nomDemandeur'].'</td>';
+									echo '<td>'.$demande['prenomDemandeur'].'</td>';
 									echo '<td>'.$demande['description'].'</td>';
 									echo '<td>'.$demande['dateDemande'].'</td>';
-									echo '<td><a href ="index.php?page=gestiondemandes&action=modificationDemande&demandeID='.$demande['demandeID'].'" id="boutonsDemande">Modifier</a></td>';
-									echo '<td><a href ="index.php?page=gestiondemandes&action=suppressionDemande&demandeID='.$demande['demandeID'].'" id="boutonsDemande">Supprimer</a></td></tr>';
+									echo '<td><a href ="index.php?page=gestiondemandes&action=modificationDemande&demandeID='.$demande['demandeID'].'" id="boutonsDemande"><img class="poubelle" src="media/images/modifier.png" alt="poubelle"></a></td>';
+									echo '<td><a href ="index.php?page=gestiondemandes&action=suppressionDemande&demandeID='.$demande['demandeID'].'" id="boutonsDemande"><img class="poubelle" src="media/images/poubelle.png" alt="poubelle"></a></td></tr>';
 
 								}
 				echo '</tbody>
