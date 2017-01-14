@@ -45,7 +45,7 @@
 /*----------------------------------------SUPPRESSION D'UN VIP----------------------------------------*/
   		elseif ($_GET["action"] == "suppressionDemande")
   		{
-        $dm->supprDemande($_GET["id"]);
+        $dm->supprimerDemande($_GET['demandeID']);
         header('Location: index.php?page=gestiondemandes');
   		}
 
