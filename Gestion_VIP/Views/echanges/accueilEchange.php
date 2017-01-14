@@ -1,5 +1,5 @@
 <?php
-		$title='Messagerie';
+		$title='Accueil échange';
 		$pageCSS='vip';
 		ob_start(); //mise en tempon début
 

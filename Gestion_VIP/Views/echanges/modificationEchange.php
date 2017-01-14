@@ -1,5 +1,5 @@
 <?php
-	$title='Ajout VIP';
+	$title='Modification échange';
 	$pageCSS='ajoutVIP';
 	ob_start(); //mise en tampon début
 		echo '
