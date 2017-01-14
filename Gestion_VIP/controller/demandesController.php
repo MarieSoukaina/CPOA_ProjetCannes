@@ -19,13 +19,13 @@
             window.location.replace("index.php?page=gestiondemandes&action=ajoutDemande");</script>';
           }*/
   			}
-  	  else
-  		{
-        require_once("./Views/demandes/ajoutDemande.php");
-  		}
-    }
+    	  else
+    		{
+          require_once("./Views/demandes/ajoutDemande.php");
+    		}
+      }
 /*----------------------------------------MODIFICATION D'UN VIP----------------------------------------*/
-  	elseif ($_GET["action"] == "modificationDemande")
+      elseif ($_GET["action"] == "modificationDemande")
   		{
         if(isset($_GET['demandeID']))
         {
@@ -41,17 +41,12 @@
   		}
 
 /*----------------------------------------SUPPRESSION D'UN VIP----------------------------------------*/
-  		elseif ($_GET["action"] == "suppressionDemande")
+      elseif ($_GET["action"] == "suppressionDemande")
   		{
         $dm->supprimerDemande($_GET['demandeID']);
         header('Location: index.php?page=gestiondemandes');
   		}
 
-/*----------------------------------------CONSULTER LA FICHE D'UN VIP----------------------------------------*/
-  		elseif ($_GET["action"] == "consultervip")
-  		{
-  				echo "test";
-  		}
     }
     else
     {

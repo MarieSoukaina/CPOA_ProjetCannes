@@ -4,7 +4,7 @@ table {
 
 }
 
-tr:nth-child(odd) {
+tr {
     background-color: #f2f2f2
 }
 

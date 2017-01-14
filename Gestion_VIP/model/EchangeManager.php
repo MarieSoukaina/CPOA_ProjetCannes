@@ -5,7 +5,9 @@
 
       public function getEchange()
       {
-        $requete = $this->executerRequete('SELECT * FROM echanges ');
+        $req=$this->executerRequete('SELECT * FROM echange');
+        $result=$req->fetchALL(PDO::FETCH_ASSOC);
+        return $result;
       }
 
     }
