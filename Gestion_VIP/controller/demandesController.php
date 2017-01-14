@@ -15,8 +15,15 @@
           $dm->ajouterDemande();
           */
   			}
+        elseif(isset($_GET['idvip']))
+        {
+          $infoVIP = $vm->getInfoVIP($_GET['idvip']);
+          require_once("Views/demandes/ajoutDemande.php");
+        }
   			else
   			{
+          $infoVIP['nom']='';
+          $infoVIP['prenom']='';
   				require_once("./Views/demandes/ajoutDemande.php");
   			}
       }

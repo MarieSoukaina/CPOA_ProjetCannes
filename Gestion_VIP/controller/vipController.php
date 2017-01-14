@@ -1,6 +1,4 @@
 <?php
-    require_once("Model/VIPManager.php");
-    $vm = new VIPManager();
 
     if(!isset($_GET['action']))
     {
