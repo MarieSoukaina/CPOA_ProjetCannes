@@ -5,27 +5,27 @@
 
       public function getDemande()
       {
-        $req = $this->executerRequete('SELECT demandeID,dateDemande,description,type,nomMembre,nom FROM demande,membrestaff,echange,vip WHERE responsableID=membrestaff.id AND demande.echangeID=echange.echangeID AND demandeurID=vip.id');
+        $req = $this->executerRequete('SELECT demandeID,nomDemandeur,prenomDemandeur,dateDemande,description,echangeDemande FROM demande');
         $result=$req->fetchALL(PDO::FETCH_ASSOC);
         return $result;
       }
 
       public function getDemandeID($id)
       {
-        $req = $this->executerRequete('SELECT demandeID,dateDemande,description,type,nomMembre,nom FROM demande,membrestaff,echange,vip WHERE responsableID=membrestaff.id AND demande.echangeID=echange.echangeID AND demandeurID=vip.id AND demandeID=?', array($id));
+        $req = $this->executerRequete('SELECT demandeID,nomDemandeur,prenomDemandeur,dateDemande,description,echangeDemande FROM demande WHERE demandeID=?', array($id));
         $result=$req->fetch(PDO::FETCH_ASSOC); //on fait pas fecthAll mais fetch car on récupère qu'une seule ligne
         return $result;
       }
-/*
-      public function ajouterDemande($nom,$prenom,$date,$description)
+
+      public function ajouterDemande($nom,$prenom,$date,$description,$echange=NULL)
       {
-        $req=$this->executerRequete('INSERT INTO demande (nom,prenom,date,description) VALUES (?,?,?,?)',array($nom,$prenom,$date,$description);
+        $req=$this->executerRequete('INSERT INTO demande (nomDemandeur,prenomDemandeur,dateDemande,description,echangeDemande) VALUES (?,?,?,?,?)',array($nom,$prenom,$date,$description,$echange));
       }
 
-*/
-      public function modifierDemande($date,$description,$type,$nonMembre,$nom,$id)
+
+      public function modifierDemande($nom,$prenom,$date,$description,$id)
       {
-        $req = $this->executerRequete('UPDATE demande,membrestaff,echange,vip SET dateDemande=?, description=?, type=?, nomMembre=?, nom=? WHERE demandeID=?', array($date,$description,$type,$nonMembre,$nom,$id));
+        $req = $this->executerRequete('UPDATE demande SET nomDemandeur=?, prenomDemandeur=?, dateDemande=?, description=? WHERE demandeID=?', array($nom,$prenom,$date,$description,$id));
       }
 
       public function supprimerDemande($id)

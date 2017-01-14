@@ -4,21 +4,27 @@
     {
       if ($_GET["action"] == "ajoutDemande")
       {
-  			if(isset($_POST['nom']) && isset($_POST['prenom']) && isset($_POST['date']) && isset($_POST['echange']))
+  			if(isset($_POST['nomDemandeur']) && isset($_POST['prenomDemandeur']) && isset($_POST['dateDemande']) && isset($_POST['description']))
   			{
-          $nom=$_POST['nom'];
-          $prenom=$_POST['prenom'];
-          $date=$_POST['date'];
-          $echange=$_POST['echange'];
+
+          $nom=$_POST['nomDemandeur'];
+          $prenom=$_POST['prenomDemandeur'];
+          $date=$_POST['dateDemande'];
           $description=$_POST['description'];
-          /*
-          $dm->ajouterDemande();
-          */
+          //$echange=$_POST['echangeDemande'];
+          $dm->ajouterDemande($nom,$prenom,$date,$description,NULL);
+          header('Location: index.php?page=gestiondemandes');
+          /*if( )
+          {
+            echo "pas ok";
+            //echo '<script language="JavaScript">alert("Veuillez saisir des données valides et présentes dans la base !");
+            //window.location.replace("index.php?page=tutorats");</script>';
+          }*/
   			}
-  			else
-  			{
-  				require_once("./Views/demandes/ajoutDemande.php");
-  			}
+  	  else
+  		{
+        require_once("./Views/demandes/ajoutDemande.php");
+  		}
     }
 /*----------------------------------------MODIFICATION D'UN VIP----------------------------------------*/
   	elseif ($_GET["action"] == "modificationDemande")
@@ -29,9 +35,9 @@
           $membrestaff=$dm->getMembre();
           require_once("Views/demandes/modificationDemande.php");
         }
-        elseif (isset($_POST['nomDemandeur']) && isset($_POST['echange']) && isset($_POST['description']) && isset($_POST['dateDemande']) && isset($_POST['nomMembre']))
+        elseif (isset($_POST['nomDemandeur']) && isset($_POST['prenomDemandeur']) && isset($_POST['description']) && isset($_POST['dateDemande']))
         {
-          $dm->modifierDemande($_POST['dateDemande'], $_POST['description'], $_POST['echange'], $_POST['nomMembre'], $_POST['nomDemandeur'], $_POST['demandeID']);
+          $dm->modifierDemande($_POST['nomDemandeur'],$_POST['prenomDemandeur'],$_POST['dateDemande'], $_POST['description'],$_POST['demandeID']);
           header('Location: index.php?page=gestiondemandes');
         }
   		}

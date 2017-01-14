@@ -7,29 +7,13 @@
 			<div class="formulaireAjoutTutorat">
 					<form method="post" action="index.php?page=gestiondemandes&action=modificationDemande" enctype="multipart/form-data">
 
-						<p><label>Nom du demandeur</label><input type="text" name="nomDemandeur" value="'.$infosDemande['nom'].'"/></p>
+						<p><label>Nom du demandeur</label><input type="text" name="nomDemandeur" value="'.$infosDemande['nomDemandeur'].'"/></p>
 
-						<label>Mail</label>
-		        <input type="radio" name="echange" value="mail" required/>
-						<label>Lettre</label>
-		        <input type="radio" name="echange" value="lettre" required/>
-						<label>Oral</label>
-		        <input type="radio" name="echange" value="oral" required/>
-						<label>Téléphone</label>
-		        <input type="radio" name="echange" value="telephone" required/>
-
-						<p><label>Description de la demande</label><textarea name="description" >'.$infosDemande['description'].'</textarea></p>
+						<p><label>Prénom du demandeur</label><input type="text" name="prenomDemandeur"value="'.$infosDemande['prenomDemandeur'].'"/></p>
 
 						<p><label>Date</label><input type="date" name="dateDemande" value="'.$infosDemande['dateDemande'].'"/></p>
 
-						<p><label>Membre du Festival</label>
-						<select name="nomMembre" >';
-							foreach($membrestaff as $option)
-							{
-								echo'<option value='.$option['motDePasse'].'> '.$option['motDePasse'].'</option>';
-							}
-						echo'
-						</select>
+						<p><label>Description de la demande</label><textarea name="description" >'.$infosDemande['description'].'</textarea></p>
 
 						<input type="hidden" name="demandeID" value="'.$infosDemande['demandeID'].'">
 

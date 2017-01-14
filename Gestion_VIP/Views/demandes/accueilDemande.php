@@ -14,20 +14,18 @@
 					<thead>
 						<tr>
 							<th>Nom du demandeur</th>
-							<th>Type de la demande</th>
-							<th>Description de la demande</th>
+							<th>Prénom du demandeur</th>
 							<th>Date de la demande</th>
-							<th>Responsable de la demande</th>
+							<th>Description de la demande</th>
+
 						</tr>
 					</thead>
 					<tbody>';
 								foreach ($demandes as $demande)
 								{
-									echo '<td>'.$demande['nom'].'</td>';
-									echo '<td>'.$demande['type'].'</td>';
+									echo '<td>'.$demande['nomDemandeur'].'</td>';
 									echo '<td>'.$demande['description'].'</td>';
 									echo '<td>'.$demande['dateDemande'].'</td>';
-									echo '<td>'.$demande['nomMembre'].'</td>';
 									echo '<td><a href ="index.php?page=gestiondemandes&action=modificationDemande&demandeID='.$demande['demandeID'].'" id="boutonsDemande">Modifier</a></td>';
 									echo '<td><a href ="index.php?page=gestiondemandes&action=suppressionDemande&demandeID='.$demande['demandeID'].'" id="boutonsDemande">Supprimer</a></td></tr>';
 
