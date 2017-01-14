@@ -10,31 +10,28 @@
 					<a href ="index.php?page=gestiondemandes&action=ajoutDemande" id="boutonAjoutVIP">Ajouter une demande</a>
 			</div>
 
-			<div id="demande">
-				<table id="tablecours">
+			<div id="tablecours">
+				<table>
 					<thead>
 						<tr>
-						  <th>ID</th>
 							<th>Nom du demandeur</th>
-							<th>Type</th>
-							<th>Description</th>
+							<th>Prénom du demandeur</th>
 							<th>Date de la demande</th>
-							<th>Responsable</th>
-							<th>Mod.</th>
-							<th>Suppr.</th>
+							<th>Description de la demande</th>
+							<th>Modifier</th>
+							<th>Supprimer</th>
+
 						</tr>
 					</thead>
 					<tbody>';
 								foreach ($demandes as $demande)
 								{
-									echo '<tr><td>'.$demande['demandeID'].'</td>';
-									echo '<td>'.$demande['responsableID'].'</td>';
+									echo '<td>'.$demande['nomDemandeur'].'</td>';
+									echo '<td>'.$demande['prenomDemandeur'].'</td>';
 									echo '<td>'.$demande['description'].'</td>';
-									echo '<td>'.$demande['date'].'</td>';
-									echo '<td>test</td>';
-									echo '<td>test</td>';
-									echo '<td class="suppr"><a href ="index.php?page=gestiondemandes&action=modificationDemande&id='.$demande['demandeID'].'" id="boutonsDemande"><img class="poubelle" src="media/images/modifier.png" alt="poubelle"></a></td>';
-									echo '<td class="suppr"><a href ="index.php?page=gestiondemandes&action=suppressionDemande&id='.$demande['demandeID'].'" id="boutonsDemande"><img class="poubelle" src="media/images/poubelle.png" alt="poubelle"></a></td></tr>';
+									echo '<td>'.$demande['dateDemande'].'</td>';
+									echo '<td><a href ="index.php?page=gestiondemandes&action=modificationDemande&demandeID='.$demande['demandeID'].'" id="boutonsDemande"><img class="poubelle" src="media/images/modifier.png" alt="poubelle"></a></td>';
+									echo '<td><a href ="index.php?page=gestiondemandes&action=suppressionDemande&demandeID='.$demande['demandeID'].'" id="boutonsDemande"><img class="poubelle" src="media/images/poubelle.png" alt="poubelle"></a></td></tr>';
 
 								}
 				echo '</tbody>
