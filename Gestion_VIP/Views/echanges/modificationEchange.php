@@ -9,6 +9,8 @@
 
 						<p><label for="expediteur"><span>Expéditeur :</span><input type="text" name="expediteur" class="champInsertion" value="'.$infosEchange['expediteur'].'"/></label></p>
 
+						<p><label for="contenuEchange"><span>Contenu :</span><textarea name="contenuEchange" class="champTextArea"/>'.$infosEchange['contenuEchange'].'</textarea></label></p>
+
 						<p><label for="dateEchange"><span>Date :</span><input type="date" name="dateEchange" class="champInsertion" value="'.$infosEchange['dateEchange'].'" /></label></p>
 
 						<p><label for="type"><span>Type :</span><input type="type" name="type" class="champInsertion" value="'.$infosEchange['type'].'"/></label></p>

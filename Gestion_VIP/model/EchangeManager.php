@@ -12,19 +12,19 @@
 
       public function getEchangeID($id)
       {
-        $req = $this->executerRequete('SELECT echangeID,expediteur,dateEchange,type,destinataire FROM echange WHERE echangeID=?', array($id));
+        $req = $this->executerRequete('SELECT echangeID, expediteur, contenuEchange, dateEchange, type, destinataire FROM echange WHERE echangeID=?', array($id));
         $result=$req->fetch(PDO::FETCH_ASSOC); //on fait pas fecthAll mais fetch car on récupère qu'une seule ligne
         return $result;
       }
 
-      public function ajouterEchange($expediteur,$dateEchange,$type,$destinataire)
+      public function ajouterEchange($expediteur,$contenuEchange,$dateEchange,$type,$destinataire)
       {
-        $req=$this->executerRequete('INSERT INTO echange (expediteur,dateEchange,type,destinataire) VALUES (?,?,?,?)', array($expediteur,$dateEchange,$type,$destinataire));
+        $req=$this->executerRequete('INSERT INTO echange (expediteur,contenuEchange,dateEchange,type,destinataire) VALUES (?,?,?,?,?)', array($expediteur,$contenuEchange,$dateEchange,$type,$destinataire));
       }
 
-      public function modifierEchange($expediteur,$dateEchange,$type,$destinataire,$id)
+      public function modifierEchange($expediteur,$contenuEchange,$dateEchange,$type,$destinataire,$id)
       {
-        $req = $this->executerRequete('UPDATE echange SET expediteur=?, dateEchange=?, type=?, destinataire=? WHERE echangeID=?', array($expediteur,$dateEchange,$type,$destinataire,$id));
+        $req = $this->executerRequete('UPDATE echange SET expediteur=?, contenuEchange=?, dateEchange=?, type=?, destinataire=? WHERE echangeID=?', array($expediteur,$contenuEchange,$dateEchange,$type,$destinataire,$id));
       }
 
       public function supprimerEchange($id)
