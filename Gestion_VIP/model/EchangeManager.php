@@ -5,7 +5,7 @@
 
       public function getEchange()
       {
-        $req=$this->executerRequete('SELECT * FROM echange');
+        $req=$this->executerRequete('SELECT * FROM echange ORDER BY expediteur ASC, dateEchange DESC');
         $result=$req->fetchALL(PDO::FETCH_ASSOC);
         return $result;
       }

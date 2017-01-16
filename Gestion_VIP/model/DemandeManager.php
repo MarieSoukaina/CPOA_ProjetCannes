@@ -5,7 +5,7 @@
 
       public function getDemande()
       {
-        $req = $this->executerRequete('SELECT demandeID,nomDemandeur,prenomDemandeur,dateDemande,description,echangeDemande FROM demande');
+        $req = $this->executerRequete('SELECT demandeID,nomDemandeur,prenomDemandeur,dateDemande,description,echangeDemande FROM demande ORDER BY nomDemandeur ASC, dateDemande DESC');
         $result=$req->fetchALL(PDO::FETCH_ASSOC);
         return $result;
       }
