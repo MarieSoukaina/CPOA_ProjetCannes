@@ -1,10 +1,11 @@
 <?php
 		$title='Accueil échange';
 		$pageCSS='vip';
-		ob_start(); //mise en tempon début
+		ob_start(); //mise en tampon début
 
 		echo '
-
+		</br>
+		</br>
 		<div id="listeBoutons">
 			<a href ="index.php?page=gestionechanges&action=ajouteEchange" id="boutonAjoutVIP">Ajouter un échange</a>
 		</div>
@@ -14,11 +15,11 @@
 					<thead>
 						<tr>
 							<th>Expéditeur</th>
-							<th>Date de la echange</th>
-							<th>Type de la echange</th>
+							<th>Date</th>
+							<th>Type</th>
 							<th>Destinataire</th>
-							<th>Modifier</th>
-							<th>Supprimer</th>
+							<th>Mod.</th>
+							<th>Supp.</th>
 
 						</tr>
 					</thead>
@@ -29,8 +30,8 @@
 							echo '<td>'.$echange['dateEchange'].'</td>';
 							echo '<td>'.$echange['type'].'</td>';
 							echo '<td>'.$echange['destinataire'].'</td>';
-							echo '<td><a href ="index.php?page=gestionechanges&action=modificationEchange&echangeID='.$echange['echangeID'].'" id="boutonsechange"><img class="poubelle" src="media/images/modifier.png" alt="poubelle"></a></td>';
-							echo '<td><a href ="index.php?page=gestionechanges&action=suppressionEchange&echangeID='.$echange['echangeID'].'" id="boutonsechange"><img class="poubelle" src="media/images/poubelle.png" alt="poubelle"></a></td></tr>';
+							echo '<td class="suppr"><a href ="index.php?page=gestionechanges&action=modificationEchange&echangeID='.$echange['echangeID'].'" id="boutonsechange"><img class="poubelle" src="media/images/modifier.png" alt="poubelle"></a></td>';
+							echo '<td class="suppr"><a href ="index.php?page=gestionechanges&action=suppressionEchange&echangeID='.$echange['echangeID'].'" id="boutonsechange"><img class="poubelle" src="media/images/poubelle.png" alt="poubelle"></a></td></tr>';
 
 						}
 				echo '</tbody>

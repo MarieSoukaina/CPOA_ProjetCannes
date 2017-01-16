@@ -14,8 +14,15 @@
           $ajouter = $em->ajouterEchange($expediteur,$dateEchange,$type,$destinataire);
           header('Location: index.php?page=gestionechanges');
         }
+        elseif(isset($_GET['idvip']))
+        {
+          $infoVIP = $vm->getInfoVIP($_GET['idvip']);
+          require_once("/Views/echanges/ajoutEchange.php");
+        }
         else
         {
+          $infoVIP['nom']='';
+          $infoVIP['prenom']='';
           require_once("/Views/echanges/ajoutEchange.php");
         }
 

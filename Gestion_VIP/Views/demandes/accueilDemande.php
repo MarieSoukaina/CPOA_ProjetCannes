@@ -14,12 +14,12 @@
 				<table>
 					<thead>
 						<tr>
-							<th>Nom du demandeur</th>
-							<th>Prénom du demandeur</th>
-							<th>Date de la demande</th>
-							<th>Description de la demande</th>
-							<th>Modifier</th>
-							<th>Supprimer</th>
+							<th>Nom demandeur</th>
+							<th>Prénom demandeur</th>
+							<th>Description</th>
+							<th>Date</th>
+							<th>Mod.</th>
+							<th>Supp.</th>
 
 						</tr>
 					</thead>
@@ -30,8 +30,8 @@
 									echo '<td>'.$demande['prenomDemandeur'].'</td>';
 									echo '<td>'.$demande['description'].'</td>';
 									echo '<td>'.$demande['dateDemande'].'</td>';
-									echo '<td><a href ="index.php?page=gestiondemandes&action=modificationDemande&demandeID='.$demande['demandeID'].'" id="boutonsDemande"><img class="poubelle" src="media/images/modifier.png" alt="poubelle"></a></td>';
-									echo '<td><a href ="index.php?page=gestiondemandes&action=suppressionDemande&demandeID='.$demande['demandeID'].'" id="boutonsDemande"><img class="poubelle" src="media/images/poubelle.png" alt="poubelle"></a></td></tr>';
+									echo '<td class="suppr"><a href ="index.php?page=gestiondemandes&action=modificationDemande&demandeID='.$demande['demandeID'].'" id="boutonsDemande"><img class="poubelle" src="media/images/modifier.png" alt="poubelle"></a></td>';
+									echo '<td class="suppr"><a href ="index.php?page=gestiondemandes&action=suppressionDemande&demandeID='.$demande['demandeID'].'" id="boutonsDemande"><img class="poubelle" src="media/images/poubelle.png" alt="poubelle"></a></td>';
 
 								}
 				echo '</tbody>

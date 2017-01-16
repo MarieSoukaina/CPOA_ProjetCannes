@@ -39,7 +39,7 @@
 					<td class="suppr"><a href="index.php?page=gestionvip&action=modifiervip&idvip='.$vip['id'].'"><img class="poubelle" src="media/images/modifier.png" alt="poubelle"></a></td>
 					<td class="suppr"><a href="index.php?page=gestionvip&action=supprimervip&idvip='.$vip['id'].'"><img class="poubelle" src="media/images/poubelle.png" alt="poubelle"></a></td>
 					<td class="suppr"><a href="index.php?page=gestiondemandes&action=ajoutDemande&idvip='.$vip['id'].'"><img class="poubelle" src="media/images/ajouterdemande.png" alt="poubelle"></a></td>
-					<td class="suppr"><a href="index.php?page=gestiondemandes&action=ajoutDemande&idvip='.$vip['id'].'"><img class="poubelle" src="media/images/ajouterechange.png" alt="poubelle"></a></td>
+					<td class="suppr"><a href="index.php?page=gestionechanges&action=ajouteEchange&idvip='.$vip['id'].'"><img class="poubelle" src="media/images/ajouterechange.png" alt="poubelle"></a></td>
 				</tr>
 				';
 			}
