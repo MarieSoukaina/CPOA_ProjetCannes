@@ -7,8 +7,9 @@
 
 			<div id="corpsAccueil">
 
-				INTERFACE DE GESTION DES VIP, DES DEMANDES ET DES ECHANGES
-
+				<h1>INTERFACE DE GESTION POUR LE PERSONNEL DU FESTIVAL</h1>
+				<br>
+				<img id="logoFestival" src="./media/images/festival_logo.png" alt="logo">
 			</div>
 
 			';

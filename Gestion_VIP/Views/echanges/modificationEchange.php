@@ -7,13 +7,13 @@
 			<div class="formulaireAjoutTutorat-entete">Modification d\'un échange</div>
 					<form method="post" action="index.php?page=gestionechanges&action=modificationEchange" enctype="multipart/form-data">
 
-						<p><label for="expediteur"><span>Expéditeur</span><input type="text" name="expediteur" class="champInsertion" value="'.$infosEchange['expediteur'].'"/></label></p>
+						<p><label for="expediteur"><span>Expéditeur :</span><input type="text" name="expediteur" class="champInsertion" value="'.$infosEchange['expediteur'].'"/></label></p>
 
-						<p><label for="dateEchange"><span>Date</span><input type="date" name="dateEchange" class="champInsertion" value="'.$infosEchange['dateEchange'].'" /></label></p>
+						<p><label for="dateEchange"><span>Date :</span><input type="date" name="dateEchange" class="champInsertion" value="'.$infosEchange['dateEchange'].'" /></label></p>
 
-						<p><label for="type"><span>Type</span><input type="type" name="type" class="champInsertion" value="'.$infosEchange['type'].'"/></label></p>
+						<p><label for="type"><span>Type :</span><input type="type" name="type" class="champInsertion" value="'.$infosEchange['type'].'"/></label></p>
 
-						<p><label for="destinataire"><span>Destinataire</span><input type="text" name="destinataire" class="champInsertion" value="'.$infosEchange['destinataire'].'"/></label></p>
+						<p><label for="destinataire"><span>Destinataire :</span><input type="text" name="destinataire" class="champInsertion" value="'.$infosEchange['destinataire'].'"/></label></p>
 
 						<input type="hidden" name="echangeID" value="'.$infosEchange['echangeID'].'">
 
