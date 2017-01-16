@@ -1,25 +1,27 @@
 <?php
 	$title='Modification demande';
-	$pageCSS='ajoutVIP';
+	$pageCSS='vip';
 	ob_start(); //mise en tampon début
 		echo '
-		<h1>Modification d\'une demande</h1>
-			<div class="formulaireAjoutTutorat">
+		<div class="formulaireAjoutTutorat">
+			<div class="formulaireAjoutTutorat-entete">Modification d\'une demande</div>
 					<form method="post" action="index.php?page=gestiondemandes&action=modificationDemande" enctype="multipart/form-data">
 
-						<p><label>Nom du demandeur</label><input type="text" name="nomDemandeur" value="'.$infosDemande['nomDemandeur'].'"/></p>
+						<p><label for="nomDemandeur"><span>Nom du demandeur</span><input type="text" name="nomDemandeur" class="champInsertion" value="'.$infosDemande['nomDemandeur'].'"/></label></p>
 
-						<p><label>Prénom du demandeur</label><input type="text" name="prenomDemandeur"value="'.$infosDemande['prenomDemandeur'].'"/></p>
+						<p><label for="prenomDemandeur"><span>Prénom du demandeur</span><input type="text" name="prenomDemandeur" class="champInsertion" value="'.$infosDemande['prenomDemandeur'].'"/></label></p>
 
-						<p><label>Date</label><input type="date" name="dateDemande" value="'.$infosDemande['dateDemande'].'"/></p>
+						<p><label for="dateDemande"><span>Date</span><input type="date" name="dateDemande" class="champInsertion" value="'.$infosDemande['dateDemande'].'"/></label></p>
 
-						<p><label>Description de la demande</label><textarea name="description" >'.$infosDemande['description'].'</textarea></p>
+						<p><label for="description"><span>Description de la demande</span><textarea name="description" class="champTextArea" >'.$infosDemande['description'].'</textarea></label></p>
 
 						<input type="hidden" name="demandeID" value="'.$infosDemande['demandeID'].'">
 
-						<p><button type="submit" name="envoyer">Envoyer</button></p>
+						<a href ="index.php?page=gestiondemandes" id="boutonAnnuler">Annuler</a>
+						<input type="submit" name="envoyer" value="Valider la modification">
 
 	    		</form>
+			</div>
 			</div>
 
 			';

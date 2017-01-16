@@ -31,7 +31,7 @@
 
 		</nav>
 		<hr>
-		<p style='margin:auto;lign-height:0;text-align:center'>copyright all right reserved 2016 ©</p>
+		<p style='margin:auto;lign-height:0;text-align:center'>copyright all right reserved 2017 ©</p>
 
 
  </footer>

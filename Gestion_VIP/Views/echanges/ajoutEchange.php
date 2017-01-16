@@ -15,9 +15,10 @@
 
             <p><label for="destinataire"><span>Destinataire</span><input type="text" name="destinataire" class="champInsertion"/></label></p>
 
-						<a href ="index.php?page=tutorats" id="boutonAnnuler">Annuler</a>
+						<a href ="index.php?page=gestionechanges" id="boutonAnnuler">Annuler</a>
 	        	<input type="submit" name="envoyer" value="Valider l\'ajout">
 	    		</form>
+			</div>
 			</div>
 
 			';

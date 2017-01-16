@@ -16,7 +16,7 @@
 
 						<p><label for="choixJourTutorat"><span>Description de la demande</span><textarea name="description" class="champTextArea"></textarea></label></p>
 
-						<a href ="index.php?page=tutorats" id="boutonAnnuler">Annuler</a>
+						<a href ="index.php?page=gestiondemandes" id="boutonAnnuler">Annuler</a>
 	        	<input type="submit" name="envoyer" value="Valider l\'ajout">
 	    		</form>
 			</div>
