@@ -24,10 +24,8 @@
 			<div id="f3">
 				<strong>Liens utiles</strong>
 				<ul>
-					<li>Test</li>
-					<li>Test</li>
-					<li>Test</li>
-					<li>Test</li>
+					<li><a href="http://www.festival-cannes.com/fr/">Festival de Cannes</a></li>
+					<li><a href="http://www.festival-cannes.com/fr/selection/competition">La séléction</a></li>
 				</ul>
 			</div>
 

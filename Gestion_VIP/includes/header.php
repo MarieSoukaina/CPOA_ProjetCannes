@@ -3,8 +3,7 @@
 			<a href=""> <img class="account"  alt="account" src="./media/images/account.png" />
 				<p><?php //echo $prenom['prenom'];  ?> </p>
 				<img class="flecheMonCompte"  alt="account" src="./media/images/fleche.png" />   </a> </div>
-		<a href="http://www.universite-lyon.fr/" title="Universités de Lyon"> <img class="univ"  alt="Universités de Lyon"  src="./media/images/comue.png"/> </a>
-		<a href="http://iut.univ-lyon1.fr/" title="IUT lyon 1"> <img title="IUT lyon 1" alt="IUT" class="iut"  src="./media/images/lyon1.png"/> </a>
+		<a href="http://www.festival-cannes.com/fr/" title="Festival de Cannes"> <img class="univ"  alt="Festival de Cannes"  src="./media/images/banniere_festival.png"/> </a>
 </header>
 
 <nav id="sousheader" class="fixed">
