@@ -24,7 +24,7 @@ html,body
 	margin-top: 50px;
 	line-height: 55px;
 	background: #ededed;
-	color: #FFA500;
+	color: #f1c40f;
 }
 
 #boxLogin
@@ -98,7 +98,7 @@ button
 	color: #f7f7f7;
 	text-shadow: 2px 2px grey;
 	border: 1px solid #434343;
- background: linear-gradient(#d48900	, #FFA500) ;
+ background: linear-gradient(#f39c12, #f1c40f) ;
  cursor: pointer;
 }
 .echec{color:red}

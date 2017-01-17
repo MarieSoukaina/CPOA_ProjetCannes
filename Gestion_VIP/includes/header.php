@@ -11,10 +11,4 @@
 			<a class="bsh1" href="index.php?page=gestionvip">Fiches VIP</a>
 			<a class="bsh2" href="index.php?page=gestiondemandes">Demandes</a>
 			<a class="bsh3" href="index.php?page=gestionechanges">Echanges</a>
-
-
-			<form id="search">
-				<input  type="image"   id="loupe"  alt="recherche" class="loupe" src="./media/images/loupe.png"/>
-				<input class="bsh4" id="bsh4" type="search"  autocomplete="on" placeholder="rechercher"/>
-			</form>
 </nav>
