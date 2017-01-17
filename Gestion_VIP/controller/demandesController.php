@@ -23,9 +23,6 @@
           }
 
         }
-
-
-  			}
         elseif(isset($_GET['idvip']))
         {
           $infoVIP = $vm->getInfoVIP($_GET['idvip']);
