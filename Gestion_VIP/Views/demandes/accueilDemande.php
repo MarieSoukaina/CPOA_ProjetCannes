@@ -26,12 +26,12 @@
 					<tbody>';
 								foreach ($demandes as $demande)
 								{
-									echo '<td>'.$demande['nomDemandeur'].'</td>';
+									echo '<tr><td>'.$demande['nomDemandeur'].'</td>';
 									echo '<td>'.$demande['prenomDemandeur'].'</td>';
 									echo '<td>'.$demande['description'].'</td>';
 									echo '<td>'.$demande['dateDemande'].'</td>';
 									echo '<td class="suppr"><a href ="index.php?page=gestiondemandes&action=modificationDemande&demandeID='.$demande['demandeID'].'" id="boutonsDemande"><img class="poubelle" src="media/images/modifier.png" alt="poubelle"></a></td>';
-									echo '<td class="suppr"><a href ="index.php?page=gestiondemandes&action=suppressionDemande&demandeID='.$demande['demandeID'].'" id="boutonsDemande"><img class="poubelle" src="media/images/poubelle.png" alt="poubelle"></a></td>';
+									echo '<td class="suppr"><a href ="index.php?page=gestiondemandes&action=suppressionDemande&demandeID='.$demande['demandeID'].'" id="boutonsDemande"><img class="poubelle" src="media/images/poubelle.png" alt="poubelle"></a></td></tr>';
 
 								}
 				echo '</tbody>

@@ -11,13 +11,20 @@
           $prenom=$_POST['prenomDemandeur'];
           $date=$_POST['dateDemande'];
           $description=$_POST['description'];
-          $ajouter = $dm->ajouterDemande($nom,$prenom,$date,$description,NULL);
-          header('Location: index.php?page=gestiondemandes');
-          /*if()
+          try
           {
-            echo '<script language="JavaScript">alert("Veuillez saisir des données valides et présentes dans la base !");
-            window.location.replace("index.php?page=gestiondemandes&action=ajoutDemande");</script>';
-          }*/
+            $ajouter = $dm->ajouterDemande($nom,$prenom,$date,$description,NULL);
+            header('Location: index.php?page=gestiondemandes');
+          }
+          catch (PDOException $e)
+          {
+              echo '<script language="JavaScript">alert("Veuillez saisir des données valides et non présentes dans la base !");
+              window.location.replace("index.php?page=gestiondemandes&action=ajoutDemande");</script>';
+          }
+
+        }
+
+
   			}
         elseif(isset($_GET['idvip']))
         {

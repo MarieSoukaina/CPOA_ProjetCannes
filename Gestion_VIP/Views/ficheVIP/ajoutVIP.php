@@ -12,7 +12,7 @@
 
 					<p><label for="prenomVIP"><span>Prenom : </span><input type="text" name="prenomVIP" class="champInsertion" placeholder="Prenom"></label></p>
 
-					<p><label for="dateNaissance"><span>Date de Naissance : </span><input type="text" name="dateNaissance" class="champInsertion" placeholder="23/07/1991"></label></p>
+					<p><label for="dateNaissance"><span>Date de Naissance : </span><input type="date" name="dateNaissance" class="champInsertion" placeholder="23/07/1991"></label></p>
 
 					<p><label for="typeVIP"><span>Type : </span><input type="text" name="typeVIP" class="champInsertion" placeholder="ex : Acteur"></label></p>
 

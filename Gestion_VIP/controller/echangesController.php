@@ -12,8 +12,16 @@
           $dateEchange=$_POST['dateEchange'];
           $type=$_POST['type'];
           $destinataire=$_POST['destinataire'];
-          $ajouter = $em->ajouterEchange($expediteur,$contenuEchange,$dateEchange,$type,$destinataire);
-          header('Location: index.php?page=gestionechanges');
+          try
+          {
+            $ajouter = $em->ajouterEchange($expediteur,$contenuEchange,$dateEchange,$type,$destinataire);
+            header('Location: index.php?page=gestionechanges');
+          }
+          catch (Exception $e)
+          {
+            echo '<script language="JavaScript">alert("Veuillez saisir des données valides et non présentes dans la base !");
+            window.location.replace("index.php?page=gestiondemandes&action=ajoutDemande");</script>';
+          }
         }
         elseif(isset($_GET['idvip']))
         {

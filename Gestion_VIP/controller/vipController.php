@@ -16,9 +16,16 @@
   				$mois = substr($dateMauvaisFormat, 3, 2);
   				$annee = substr($dateMauvaisFormat, 6, 4);
   				$dateNaissanceBonFormat = ''.$annee.'-'.$mois.'-'.$jour.'';
-
-  				$vm->ajouterVIP($_POST['nomVIP'], $_POST['prenomVIP'], $dateNaissanceBonFormat, $_POST['typeVIP'], $_POST['infoVIP']);
-  				header('Location: index.php?page=gestionvip&action=consultervip');
+  				try
+          {
+            $vm->ajouterVIP($_POST['nomVIP'], $_POST['prenomVIP'], $dateNaissanceBonFormat, $_POST['typeVIP'], $_POST['infoVIP']);
+            header('Location: index.php?page=gestionvip&action=consultervip');
+  				}
+          catch (Exception $e)
+          {
+            echo '<script language="JavaScript">alert("Veuillez saisir des données valides et non présentes dans la base !");
+            window.location.replace("index.php?page=gestiondemandes&action=ajoutDemande");</script>';
+  				}
   			}
   			else
   			{
